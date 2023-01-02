@@ -1,0 +1,151 @@
+#root {
+  width: 70vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.component {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.TaskList {
+  width: 38%;
+  overflow-y: scroll;
+}
+.TaskList .Tasks_service {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.TaskList .Tasks_service span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(41, 224, 41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  transition: 0.1s ease;
+}
+.TaskList .Tasks_service span .fa-plus {
+  font-size: 25px;
+  color: white;
+}
+.TaskList .Tasks_service span:hover {
+  background-color: rgb(22, 143, 22);
+}
+.TaskList .Tasks {
+  list-style: none;
+  padding: 0;
+}
+.TaskList .Tasks li {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.TaskList .Tasks li p {
+  display: inline-block;
+  width: 300px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.TaskList .Tasks li .btns_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+  margin-right: 10px;
+}
+.TaskList .Tasks li .btns_container .fa-solid {
+  font-size: 20px;
+  pointer-events: none;
+}
+.TaskList .Tasks li .btns_container .fa-check {
+  color: green;
+}
+.TaskList .Tasks li .btns_container .fa-play {
+  color: blue;
+}
+.TaskList .Tasks li .btns_container .fa-trash {
+  color: red;
+}
+.TaskList .Tasks li:hover {
+  box-shadow: 3px 0 3px 3px lightgray;
+}
+
+.TaskEdit {
+  width: 58%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.TaskEdit h2 {
+  margin: 0;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+.TaskEdit .Title_Edit,
+.TaskEdit .Description_Edit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.TaskEdit .Title_Edit label,
+.TaskEdit .Description_Edit label {
+  margin-bottom: 20px;
+}
+.TaskEdit .Title_Edit {
+  height: 150px;
+}
+.TaskEdit .Title_Edit input {
+  height: 30px;
+  width: 80%;
+  font-size: 18px;
+}
+.TaskEdit .Description_Edit textarea {
+  width: 80%;
+  font-size: 18px;
+  resize: none;
+}
+.TaskEdit .changes_accept {
+  width: 100px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.button {
+  outline: none;
+  border: 1px solid lightgray;
+  background: none;
+}
+
+.complited {
+  background: green;
+}
+
+.play {
+  background-color: blue;
+}
+
+.selected {
+  background-color: darkorange;
+}/*# sourceMappingURL=App.css.map */
