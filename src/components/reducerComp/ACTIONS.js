@@ -4,6 +4,7 @@ const ACTIONS = {
     SELECTED_TASK: 'SELECTED_TASK',
     EDIT_TASK: 'EDIT_TASK',
     SET_COMPLITE: 'SET_COMPLITE',
+    SET_PLAY: 'SET_PLAY'
 }
 
 export default ACTIONS;

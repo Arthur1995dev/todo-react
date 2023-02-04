@@ -2,6 +2,7 @@
 @mixin flex-between {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 #root {
     width: 70vw;
@@ -17,10 +18,8 @@
     width: 38%;
     overflow-y: scroll;
     .Tasks_service {
-        display: flex;
-        justify-content: space-between;
+        @include flex-between;
         align-items: center;
-        flex-wrap: wrap;
         span {
             display: inline-block;
             width: 30px;
@@ -51,8 +50,7 @@
             width: 100%;
             height: 50px;
             border: 1px solid black;
-            margin: 0 auto;
-            margin-top: 10px;
+            margin: 10px auto 0;
             p {
                 display: inline-block;
                 width: 300px;
@@ -64,20 +62,24 @@
             .btns_container {
                 @include flex-between;
                 align-items: center;
-                width: 150px;
-                margin-right: 10px;
-                .fa-solid {
-                    font-size: 20px;
-                    pointer-events: none;
-                }
-                .fa-check {
-                    color: green;
-                }
-                .fa-play {
-                    color: blue;
-                }
-                .fa-trash {
-                    color: red;
+                max-width: 150px;
+                button {
+                    width: 30px;
+                    border: 1px solid lightgray;
+                    margin-right: 10px;
+                    .fa-solid {
+                        font-size: 20px;
+                        pointer-events: none;
+                    }
+                    .fa-check {
+                        color: rgba(31, 119, 6, 0.987);
+                    }
+                    .fa-play {
+                        color: blue;
+                    }
+                    .fa-trash {
+                        color: red;
+                    }
                 }
             }
         }
@@ -111,22 +113,38 @@
     .Title_Edit {
         height: 150px;
         input {
-            height: 30px;
+            max-height: 30px;
             width: 80%;
-            font-size: 18px;
+            border: none;
+            border-bottom: 2px solid lightgray;
+            font-size: 1.2rem;
+            outline: none;
+
         }
     }
     .Description_Edit {
         textarea {
             width: 80%;
-            font-size: 18px;
             resize: none;
+            font-size: 1.5em;
+            outline: none;
+            border: 2px solid lightgray;
         }
     }
     .changes_accept {
         width: 100px;
         height: 30px;
         margin: 0 auto;
+        border-radius: 5px;
+        background-color: rgb(64, 98, 200);
+        color: white;
+        transition: 0.2s;
+    }
+    .changes_accept:hover {
+        background-color: rgb(23, 71, 215);
+    }
+    .changes_accept:active {
+        background-color: rgb(4, 35, 126);
     }
 }
 
@@ -137,12 +155,12 @@
 }
 
 //Классы задач
-.complited {
-    background: green;
-}
 .play {
-    background-color: blue;
+    background-color: #32E6E4;
+}
+.complited {
+    background-color: #29F23A;
 }
 .selected {
-    background-color: darkorange;
+    background-color: rgb(210, 154, 86);
 }

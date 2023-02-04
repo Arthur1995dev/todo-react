@@ -65,18 +65,24 @@ const reducer = (state, action) => {
             }
         case ACTIONS.SET_COMPLITE:
             return {
-                ...state,
-                tasks: state.tasks.map(task => {
-                    if (task.id === action.id) task.complited = !task.complited
-                    return task
-                }),
-                tasksComplited: state.tasks.filter(task => task.complited === true).length,
-            }
+                    ...state,
+                    tasks: state.tasks.map(task => {
+                        if (task.id === action.id) {
+                            task.complited = !task.complited
+                            task.play = false
+                        }
+                        return task
+                    }),
+                    tasksComplited: state.tasks.filter(task => task.complited === true).length,
+                }
         case ACTIONS.SET_PLAY:
             return {
                 ...state,
                 tasks: state.tasks.map(task => {
-                    if (task.id === action.id) task.play = !task.play
+                    if (task.id === action.id) {
+                        task.play = !task.play
+                        task.complited = false
+                    }
                     return task
                 })
             }

@@ -9,6 +9,7 @@
   height: 600px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .TaskList {
@@ -18,8 +19,8 @@
 .TaskList .Tasks_service {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 .TaskList .Tasks_service span {
   display: inline-block;
@@ -46,13 +47,13 @@
 .TaskList .Tasks li {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   box-sizing: border-box;
   align-items: center;
   width: 100%;
   height: 50px;
   border: 1px solid black;
-  margin: 0 auto;
-  margin-top: 10px;
+  margin: 10px auto 0;
 }
 .TaskList .Tasks li p {
   display: inline-block;
@@ -68,21 +69,26 @@
 .TaskList .Tasks li .btns_container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  width: 150px;
+  max-width: 150px;
+}
+.TaskList .Tasks li .btns_container button {
+  width: 30px;
+  border: 1px solid lightgray;
   margin-right: 10px;
 }
-.TaskList .Tasks li .btns_container .fa-solid {
+.TaskList .Tasks li .btns_container button .fa-solid {
   font-size: 20px;
   pointer-events: none;
 }
-.TaskList .Tasks li .btns_container .fa-check {
-  color: green;
+.TaskList .Tasks li .btns_container button .fa-check {
+  color: rgba(31, 119, 6, 0.987);
 }
-.TaskList .Tasks li .btns_container .fa-play {
+.TaskList .Tasks li .btns_container button .fa-play {
   color: blue;
 }
-.TaskList .Tasks li .btns_container .fa-trash {
+.TaskList .Tasks li .btns_container button .fa-trash {
   color: red;
 }
 .TaskList .Tasks li:hover {
@@ -117,19 +123,34 @@
   height: 150px;
 }
 .TaskEdit .Title_Edit input {
-  height: 30px;
+  max-height: 30px;
   width: 80%;
-  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid lightgray;
+  font-size: 1.2rem;
+  outline: none;
 }
 .TaskEdit .Description_Edit textarea {
   width: 80%;
-  font-size: 18px;
   resize: none;
+  font-size: 1.5em;
+  outline: none;
+  border: 2px solid lightgray;
 }
 .TaskEdit .changes_accept {
   width: 100px;
   height: 30px;
   margin: 0 auto;
+  border-radius: 5px;
+  background-color: rgb(64, 98, 200);
+  color: white;
+  transition: 0.2s;
+}
+.TaskEdit .changes_accept:hover {
+  background-color: rgb(23, 71, 215);
+}
+.TaskEdit .changes_accept:active {
+  background-color: rgb(4, 35, 126);
 }
 
 .button {
@@ -138,14 +159,14 @@
   background: none;
 }
 
-.complited {
-  background: green;
+.play {
+  background-color: #32E6E4;
 }
 
-.play {
-  background-color: blue;
+.complited {
+  background-color: #29F23A;
 }
 
 .selected {
-  background-color: darkorange;
+  background-color: rgb(210, 154, 86);
 }/*# sourceMappingURL=App.css.map */

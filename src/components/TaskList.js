@@ -31,6 +31,7 @@ export const TaskList = () => {
 
             if (e.target.classList.contains('btn_play')) {
                 dispatch({type: 'SET_PLAY', id: task.id})
+                console.log('hi')
                 return
             }
 

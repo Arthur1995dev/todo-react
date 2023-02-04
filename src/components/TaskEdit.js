@@ -9,6 +9,7 @@ export const TaskEdit = () => {
 
     const acceptHundler = () => {
         dispatch({type: 'EDIT_TASK', title: title, description: description})
+        dispatch({type: 'SELECTED_TASK'})
     }
 
     useEffect(() => {
@@ -20,11 +21,11 @@ export const TaskEdit = () => {
         <h2>Редактировать</h2>
         <div className="Title_Edit">
             <label>Заголовок</label>
-            <input value={title} onChange={(e) => setTitle(e.target.value)}></input>
+            <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Введите заголовок"></input>
         </div>
         <div className="Description_Edit">
             <label>Описание</label>
-            <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={10}></textarea>
+            <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={10} placeholder="Введите описание задачи"></textarea>
         </div>
         <button className="changes_accept button" onClick={acceptHundler}>Изменить</button>
     </div>
